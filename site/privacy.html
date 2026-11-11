@@ -1,0 +1,34 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Privacy · Perchlight</title>
+<link rel="icon" href="icon.png">
+<link rel="stylesheet" href="site.css">
+</head>
+<body>
+<header class="wrap top"><a class="brand" href="/"><img src="icon.png" alt="" width="36" height="36"> Perchlight</a><nav><a href="https://github.com/matpitts13/perchlight">GitHub</a><a href="terms.html">Terms</a></nav></header>
+<main class="wrap doc">
+  <h1>Privacy</h1>
+  <p class="small">Last updated: November 9, 2026</p>
+
+  <h2>The Perchlight app</h2>
+  <p>Perchlight runs on your computer. We (the Perchlight project) don't run any server for the app and don't receive any of your data.</p>
+  <ul>
+    <li><b>Your Cloudflare sign-in</b> (an API token, or a "Sign in with Cloudflare" token) is stored encrypted on your computer with your operating system's key store, and is sent only to Cloudflare.</li>
+    <li><b>Your projects and screens</b> are stored only on your computer.</li>
+    <li><b>Your data</b> (KV values, D1 rows, mailing-list subscribers) goes directly between your computer and Cloudflare's API. It never passes through us.</li>
+    <li>The app has no analytics, tracking or crash reporting.</li>
+  </ul>
+  <p>When you use "Sign in with Cloudflare", Cloudflare's own privacy policy applies to that sign-in. Perchlight asks only for the permissions it needs: reading your account details, and editing Workers KV and D1.</p>
+
+  <h2>This website and the updates list</h2>
+  <p>If you join the updates list, your email address is stored in a mailing list we run on Cloudflare (using perchlight-list), along with when you signed up and confirmed. We use it only to email you about new Perchlight versions. Every email has an unsubscribe link. Unsubscribing takes effect immediately, and you can ask us to delete your address entirely. To prevent abuse, signup attempts are counted per network using a one-way hash; we don't store IP addresses.</p>
+  <p>This website uses no cookies and no analytics.</p>
+
+  <h2>Contact</h2>
+  <p>Questions or deletion requests: open an issue at <a href="https://github.com/matpitts13/perchlight/issues">github.com/matpitts13/perchlight</a>.</p>
+</main>
+</body>
+</html>

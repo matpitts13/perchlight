@@ -1,0 +1,39 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512">
+  <!-- Perchlight: a small bird on a perch beside a warm light. Original artwork. -->
+  <defs>
+    <linearGradient id="bg" x1="0" y1="0" x2="0" y2="1">
+      <stop offset="0" stop-color="#262a33"/>
+      <stop offset="1" stop-color="#15171c"/>
+    </linearGradient>
+    <radialGradient id="glow" cx="0.5" cy="0.5" r="0.5">
+      <stop offset="0" stop-color="#ffd27a" stop-opacity="0.95"/>
+      <stop offset="0.45" stop-color="#f0a83c" stop-opacity="0.55"/>
+      <stop offset="1" stop-color="#f0a83c" stop-opacity="0"/>
+    </radialGradient>
+    <radialGradient id="bulb" cx="0.4" cy="0.38" r="0.62">
+      <stop offset="0" stop-color="#fff1c9"/>
+      <stop offset="0.55" stop-color="#ffc35a"/>
+      <stop offset="1" stop-color="#e3922b"/>
+    </radialGradient>
+  </defs>
+  <rect x="16" y="16" width="480" height="480" rx="108" fill="url(#bg)"/>
+  <!-- the light -->
+  <circle cx="352" cy="168" r="132" fill="url(#glow)"/>
+  <circle cx="352" cy="168" r="54" fill="url(#bulb)"/>
+  <!-- the perch -->
+  <path d="M84 372 C 190 352, 330 352, 436 368" stroke="#c9873a" stroke-width="20" stroke-linecap="round" fill="none"/>
+  <path d="M380 362 l 34 -30" stroke="#c9873a" stroke-width="14" stroke-linecap="round"/>
+  <!-- the bird -->
+  <g fill="#eceae4">
+    <path d="M150 352
+             C 140 300, 160 250, 214 236
+             C 230 210, 268 204, 290 226
+             C 300 236, 302 248, 300 258
+             L 330 266 L 300 276
+             C 296 316, 268 348, 226 354
+             L 206 356 L 150 352 Z"/>
+    <path d="M160 300 C 120 300, 96 318, 82 340 C 112 334, 140 330, 164 334 Z"/>
+  </g>
+  <circle cx="270" cy="240" r="9" fill="#15171c"/>
+  <path d="M212 350 l -4 12 M 236 350 l 3 12" stroke="#c9873a" stroke-width="8" stroke-linecap="round"/>
+</svg>

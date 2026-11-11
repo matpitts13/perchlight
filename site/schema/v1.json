@@ -1,0 +1,152 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://perchlight.ravenburst.com/schema/v1.json",
+  "title": "Perchlight screens (perchlight.json)",
+  "description": "Screens for the Perchlight desktop app: tables over Cloudflare Workers KV or D1 data, plus the built-in perchlight-list mailing-list screen. The app checks files against these same rules (plus unique screen ids) and explains any problem.",
+  "type": "object",
+  "required": ["version", "views"],
+  "additionalProperties": false,
+  "properties": {
+    "$schema": { "type": "string" },
+    "version": { "const": 1, "description": "Format version. This app understands version 1." },
+    "views": { "type": "array", "items": { "$ref": "#/$defs/view" }, "description": "Screen ids must be unique (checked by the app)." }
+  },
+  "$defs": {
+    "id": { "type": "string", "pattern": "^[a-z0-9][a-z0-9-]{0,39}$", "description": "Unique among screens: lower-case letters, digits and dashes." },
+    "title": { "type": "string", "minLength": 1, "maxLength": 60 },
+    "segment": { "description": "Field names can't be __proto__, constructor or prototype.", "type": "string", "not": { "type": "string", "pattern": "(^|\\.)(__proto__|constructor|prototype)(\\.|$)" } },
+    "view": { "oneOf": [{ "$ref": "#/$defs/kvView" }, { "$ref": "#/$defs/d1View" }, { "$ref": "#/$defs/listPreset" }] },
+
+    "kvView": {
+      "type": "object",
+      "required": ["id", "title", "source", "columns"],
+      "additionalProperties": false,
+      "properties": {
+        "id": { "$ref": "#/$defs/id" },
+        "title": { "$ref": "#/$defs/title" },
+        "source": {
+          "type": "object",
+          "required": ["type", "namespace"],
+          "additionalProperties": false,
+          "properties": {
+            "type": { "const": "kv" },
+            "namespace": { "type": "string", "minLength": 1, "maxLength": 100, "description": "KV namespace id." },
+            "prefix": { "type": "string", "maxLength": 200, "description": "Only keys starting with this." }
+          }
+        },
+        "keyPattern": { "type": "string", "minLength": 1, "maxLength": 200, "pattern": "\\{[A-Za-z0-9_]+\\}", "description": "Names parts of the key, e.g. \"devices:{hash}\" makes column source \"key.hash\" available." },
+        "columns": { "type": "array", "minItems": 1, "maxItems": 30, "items": { "$ref": "#/$defs/kvColumn" } },
+        "actions": { "type": "array", "items": { "$ref": "#/$defs/kvAction" } }
+      }
+    },
+    "d1View": {
+      "type": "object",
+      "required": ["id", "title", "source", "columns"],
+      "additionalProperties": false,
+      "properties": {
+        "id": { "$ref": "#/$defs/id" },
+        "title": { "$ref": "#/$defs/title" },
+        "source": {
+          "type": "object",
+          "required": ["type", "database", "table"],
+          "additionalProperties": false,
+          "properties": {
+            "type": { "const": "d1" },
+            "database": { "type": "string", "minLength": 1, "maxLength": 100, "description": "D1 database id." },
+            "table": { "type": "string", "minLength": 1, "maxLength": 100, "pattern": "^[A-Za-z_][A-Za-z0-9_]*$" }
+          }
+        },
+        "columns": { "type": "array", "minItems": 1, "maxItems": 30, "items": { "$ref": "#/$defs/d1Column" } },
+        "actions": { "type": "array", "items": { "$ref": "#/$defs/d1Action" } }
+      }
+    },
+    "listPreset": {
+      "type": "object",
+      "required": ["id", "title", "preset", "database"],
+      "additionalProperties": false,
+      "properties": {
+        "id": { "$ref": "#/$defs/id" },
+        "title": { "$ref": "#/$defs/title" },
+        "preset": { "const": "perchlight-list" },
+        "database": { "type": "string", "minLength": 1, "maxLength": 100, "description": "The D1 database your perchlight-list Worker uses." },
+        "siteUrl": { "type": "string", "maxLength": 300, "pattern": "^https://[^\\s/]+", "description": "Your perchlight-list site, for adding subscribers through its double opt-in." }
+      }
+    },
+
+    "colLabel": { "type": "string", "minLength": 1, "maxLength": 60 },
+    "colType": { "enum": ["text", "number", "boolean", "date", "enum", "count", "json"], "default": "text" },
+    "colOptions": { "type": "array", "minItems": 1, "items": { "type": "string" }, "description": "Allowed values, for type \"enum\" only." },
+    "colRules": {
+      "description": "An enum column needs options; options only apply to enum columns.",
+      "if": { "type": "object", "required": ["type"], "properties": { "type": { "const": "enum" } } },
+      "then": { "type": "object", "required": ["options"] },
+      "else": { "type": "object", "not": { "type": "object", "required": ["options"] } }
+    },
+    "kvColumn": {
+      "type": "object",
+      "required": ["label", "from"],
+      "additionalProperties": false,
+      "properties": {
+        "label": { "$ref": "#/$defs/colLabel" },
+        "from": { "type": "string", "maxLength": 200, "pattern": "^(key|value|expiration|key\\.[A-Za-z0-9_]+|value(\\.[A-Za-z0-9_$-]+)+)$", "allOf": [{ "$ref": "#/$defs/segment" }], "description": "\"key\", \"key.<part>\" (see keyPattern), \"value\", \"value.<field>.<field>\" or \"expiration\"." },
+        "type": { "$ref": "#/$defs/colType" },
+        "options": { "$ref": "#/$defs/colOptions" },
+        "editable": { "type": "boolean" },
+        "hidden": { "type": "boolean" }
+      },
+      "allOf": [
+        { "$ref": "#/$defs/colRules" },
+        {
+          "description": "Keys and expirations can't be edited from a column.",
+          "if": { "type": "object", "required": ["editable"], "properties": { "editable": { "const": true } } },
+          "then": { "type": "object", "properties": { "from": { "type": "string", "pattern": "^value" } } }
+        }
+      ]
+    },
+    "d1Column": {
+      "type": "object",
+      "required": ["label", "from"],
+      "additionalProperties": false,
+      "properties": {
+        "label": { "$ref": "#/$defs/colLabel" },
+        "from": { "type": "string", "maxLength": 200, "pattern": "^[A-Za-z_][A-Za-z0-9_]*$", "description": "Column name." },
+        "type": { "$ref": "#/$defs/colType" },
+        "options": { "$ref": "#/$defs/colOptions" },
+        "editable": { "type": "boolean" },
+        "hidden": { "type": "boolean" }
+      },
+      "allOf": [{ "$ref": "#/$defs/colRules" }]
+    },
+
+    "scalar": { "type": ["string", "number", "boolean", "null"] },
+    "kvAction": {
+      "type": "object",
+      "required": ["label"],
+      "additionalProperties": false,
+      "properties": {
+        "label": { "type": "string", "minLength": 1, "maxLength": 40 },
+        "confirm": { "type": "boolean" },
+        "set": {
+          "type": "object",
+          "minProperties": 1,
+          "propertyNames": { "pattern": "^value(\\.[A-Za-z0-9_$-]+)+$", "allOf": [{ "$ref": "#/$defs/segment" }] },
+          "additionalProperties": { "$ref": "#/$defs/scalar" }
+        },
+        "delete": { "const": true }
+      },
+      "oneOf": [{ "required": ["set"] }, { "required": ["delete"] }]
+    },
+    "d1Action": {
+      "type": "object",
+      "required": ["label"],
+      "additionalProperties": false,
+      "properties": {
+        "label": { "type": "string", "minLength": 1, "maxLength": 40 },
+        "confirm": { "type": "boolean" },
+        "set": { "type": "object", "minProperties": 1, "propertyNames": { "pattern": "^[A-Za-z_][A-Za-z0-9_]*$" }, "additionalProperties": { "$ref": "#/$defs/scalar" } },
+        "delete": { "const": true }
+      },
+      "oneOf": [{ "required": ["set"] }, { "required": ["delete"] }]
+    }
+  }
+}

@@ -1,0 +1,23 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta
+      http-equiv="Content-Security-Policy"
+      content="default-src 'self'; script-src 'self'; style-src 'self' 'unsafe-inline'; img-src 'self' data:; frame-src 'self'; connect-src 'self'; object-src 'none'; base-uri 'none'; form-action 'none'"
+    />
+    <title>Perchlight</title>
+    <link rel="stylesheet" href="styles.css" />
+  </head>
+  <body>
+    <aside class="sidebar">
+      <div class="brand"><span class="brand-mark" aria-hidden="true"></span>Perchlight</div>
+      <div id="picker"></div>
+      <nav id="nav" aria-label="Screens"></nav>
+      <div class="conn" id="conn"></div>
+    </aside>
+    <main id="main"></main>
+    <div id="toasts" role="status" aria-live="polite"></div>
+    <script type="module" src="app.js"></script>
+  </body>
+</html>

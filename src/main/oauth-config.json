@@ -1,0 +1,7 @@
+{
+  "clientId": "",
+  "authorizeUrl": "https://dash.cloudflare.com/oauth2/auth",
+  "tokenUrl": "https://dash.cloudflare.com/oauth2/token",
+  "scopes": ["account:read", "workers_kv:write", "d1:write", "offline_access"],
+  "ports": [8976, 8977, 8978]
+}

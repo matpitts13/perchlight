@@ -1,0 +1,55 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Perchlight: a free desktop app for your Cloudflare data</title>
+<meta name="description" content="Browse and edit Cloudflare Workers KV and D1, build your own screens without code, and run a free self-hosted mailing list. Open source, MIT licensed.">
+<link rel="icon" href="icon.png">
+<link rel="stylesheet" href="site.css">
+</head>
+<body>
+<header class="wrap top">
+  <a class="brand" href="/"><img src="icon.png" alt="" width="36" height="36"> Perchlight</a>
+  <nav><a href="https://github.com/matpitts13/perchlight">GitHub</a><a href="privacy.html">Privacy</a><a href="terms.html">Terms</a></nav>
+</header>
+
+<main class="wrap">
+  <section class="hero">
+    <h1>A free desktop app for your Cloudflare data</h1>
+    <p class="lead">Browse and edit Workers KV and D1, build your own screens over your data without writing code, and run a mailing list, for every site you run.</p>
+    <p class="cta">
+      <a class="button" href="https://github.com/matpitts13/perchlight/releases/latest">Download for Windows, macOS or Linux</a>
+      <a class="button ghost" href="https://github.com/matpitts13/perchlight">View the source</a>
+    </p>
+    <p class="small">Free and open source (MIT). Installers aren't code-signed, so your system will ask you to confirm once. <a href="https://github.com/matpitts13/perchlight#install">How to open them</a>.</p>
+  </section>
+
+  <section class="grid">
+    <div><h2>One app, all your sites</h2><p>A project per site or app, each with its own Cloudflare account. Switch in one click.</p></div>
+    <div><h2>Screens without code</h2><p>Pick a table or a set of keys. Perchlight suggests the columns, and you choose what's shown, editable, and what each row's buttons do.</p></div>
+    <div><h2>Or write them yourself</h2><p>Screens are a <code>perchlight.json</code> file with a <a href="schema/v1.json">published schema</a>, so you or your AI agent can write it. Imports are checked and every problem is explained.</p></div>
+    <div><h2>A mailing list included</h2><p>Pairs with <a href="https://github.com/matpitts13/perchlight-list">perchlight-list</a>, a free self-hosted mailing list on Cloudflare: double opt-in, spam protection, and announcements through Resend, Amazon SES, Mailgun, Postmark or Cloudflare Email.</p></div>
+  </section>
+
+  <section class="signup" id="updates">
+    <h2>Get updates</h2>
+    <p>A short email when there's a new version. Unsubscribe any time. (This form runs on perchlight-list.)</p>
+    <!-- Point this at your perchlight-list deployment. -->
+    <form method="post" action="https://list.perchlight.ravenburst.com/api/subscribe">
+      <label for="email">Email address</label>
+      <div class="row">
+        <input id="email" name="email" type="email" required autocomplete="email" placeholder="you@example.com">
+        <button type="submit">Join</button>
+      </div>
+      <div class="hp" aria-hidden="true"><label for="website">Leave this empty</label><input id="website" name="website" tabindex="-1" autocomplete="off"></div>
+      <input type="hidden" name="source" value="perchlight-site">
+    </form>
+  </section>
+</main>
+
+<footer class="wrap small">
+  <p>Perchlight is an independent open-source project. It is not affiliated with, endorsed by, or sponsored by Cloudflare, Inc. "Cloudflare" is a trademark of Cloudflare, Inc.</p>
+</footer>
+</body>
+</html>
