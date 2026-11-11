@@ -3,6 +3,7 @@ name: CI
 # Free on public repos. Lean anyway: main + pull requests only, docs-only
 # changes skipped, older runs cancelled, and nothing is saved as an artifact.
 on:
+  workflow_dispatch: # a Run workflow button in the Actions tab
   push:
     branches: [main]
     paths-ignore: ["**.md", "docs/**", "site/*.html", "site/*.css", "LICENSE"]
