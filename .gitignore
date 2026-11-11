@@ -6,3 +6,5 @@ smoke*.png
 *.log
 .DS_Store
 Thumbs.db
+.wrangler/
+graphify-out/
