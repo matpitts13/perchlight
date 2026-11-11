@@ -25,7 +25,15 @@ h1 { font-size: clamp(30px, 5vw, 46px); line-height: 1.15; margin: 0 0 16px; max
 .grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(220px, 1fr)); gap: 16px; padding: 24px 0; }
 .grid > div, .signup { background: var(--panel); border: 1px solid var(--line); border-radius: 14px; padding: 20px 22px; }
 h2 { font-size: 18px; margin: 0 0 8px; }
+h2.section { font-size: 24px; margin: 32px 0 0; }
+h3 { font-size: 18px; margin: 0 0 8px; }
 .grid p { margin: 0; color: var(--muted); }
+.tools > div { display: flex; flex-direction: column; gap: 8px; }
+.tools p { margin: 0; }
+.tools .tag { font-size: 13px; font-weight: 600; letter-spacing: 0.02em; color: var(--accent-2); }
+.tools .replaces { font-size: 14px; color: var(--text); margin-top: auto; padding-top: 6px; border-top: 1px dashed var(--line); }
+.tools .links { display: flex; gap: 14px; flex-wrap: wrap; font-weight: 600; }
+.tools .soon { border-style: dashed; background: transparent; }
 code { font-family: ui-monospace, Consolas, monospace; font-size: 0.9em; }
 .signup { margin: 16px 0 40px; }
 .signup label { display: block; font-weight: 600; margin-bottom: 6px; }
@@ -37,3 +45,4 @@ footer { padding: 24px 16px 40px; border-top: 1px solid var(--line); }
 .doc { max-width: 72ch; padding: 24px 0 48px; }
 .doc h1 { max-width: none; font-size: 32px; }
 .doc h2 { margin-top: 28px; }
+@media (max-width: 520px) { nav { gap: 12px; font-size: 15px; } .hero { padding-top: 24px; } }

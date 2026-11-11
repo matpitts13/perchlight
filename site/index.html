@@ -3,40 +3,85 @@
 <head>
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
-<title>Perchlight: a free desktop app for your Cloudflare data</title>
-<meta name="description" content="Browse and edit Cloudflare Workers KV and D1, build your own screens without code, and run a free self-hosted mailing list. Open source, MIT licensed.">
+<title>Perchlight: free tools for running your product on Cloudflare</title>
+<meta name="description" content="Free, open-source tools that run on your own Cloudflare account: a desktop app for your KV and D1 data, a mailing list, an update server for your app, and usage alerts. No subscriptions.">
 <link rel="icon" href="icon.png">
 <link rel="stylesheet" href="site.css">
 </head>
 <body>
 <header class="wrap top">
   <a class="brand" href="/"><img src="icon.png" alt="" width="36" height="36"> Perchlight</a>
-  <nav><a href="https://github.com/matpitts13/perchlight">GitHub</a><a href="privacy.html">Privacy</a><a href="terms.html">Terms</a></nav>
+  <nav><a href="#tools">Tools</a><a href="https://github.com/matpitts13">GitHub</a><a href="privacy.html">Privacy</a><a href="terms.html">Terms</a></nav>
 </header>
 
 <main class="wrap">
   <section class="hero">
-    <h1>A free desktop app for your Cloudflare data</h1>
-    <p class="lead">Browse and edit Workers KV and D1, build your own screens over your data without writing code, and run a mailing list, for every site you run.</p>
+    <h1>Free tools for running your product on Cloudflare</h1>
+    <p class="lead">A desktop app for your Cloudflare data, plus self-hosted tools that replace paid services: a mailing list, an update server for your app, usage alerts, and more on the way. All open source, all on your own Cloudflare account, no subscriptions.</p>
+    <p class="cta">
+      <a class="button" href="#tools">See the tools</a>
+      <a class="button ghost" href="https://github.com/matpitts13">Everything on GitHub</a>
+    </p>
+    <p class="small">Each tool is a separate project you can use on its own. The self-hosted ones deploy to your account with one click, and fit inside Cloudflare's free plan for most small products.</p>
+  </section>
+
+  <section id="tools">
+    <h2 class="section">The tools</h2>
+    <div class="grid tools">
+      <div>
+        <p class="tag">Desktop app · Windows, macOS, Linux</p>
+        <h3>Perchlight</h3>
+        <p>Browse and edit Workers KV and D1, build your own screens over your data without code, and run every tool below from one place.</p>
+        <p class="replaces">Replaces: digging through the dashboard</p>
+        <p class="links"><a href="https://github.com/matpitts13/perchlight/releases/latest">Download</a><a href="https://github.com/matpitts13/perchlight">Source</a></p>
+      </div>
+      <div>
+        <p class="tag">Self-hosted · Workers + D1</p>
+        <h3>perchlight-list</h3>
+        <p>A mailing list: double opt-in signups, spam protection, and announcements through Resend, Amazon SES, Mailgun, Postmark or Cloudflare Email.</p>
+        <p class="replaces">Replaces: a monthly newsletter-service bill</p>
+        <p class="links"><a href="https://github.com/matpitts13/perchlight-list">Source and setup</a></p>
+      </div>
+      <div>
+        <p class="tag">Self-hosted · Workers + R2 + D1</p>
+        <h3>perchlight-updates</h3>
+        <p>An update server for Electron and Tauri apps: release channels, gradual rollouts, pulling a bad release in one command, and private links for testers.</p>
+        <p class="replaces">Replaces: paid update and download hosting</p>
+        <p class="links"><a href="https://github.com/matpitts13/perchlight-updates">Source and setup</a></p>
+      </div>
+      <div>
+        <p class="tag">Self-hosted · Workers + D1</p>
+        <h3>perchlight-guard</h3>
+        <p>Warns you at 80% and 100% of every Cloudflare free-plan limit, and of GitHub Actions' free allowance, before you hit errors or a bill.</p>
+        <p class="replaces">Replaces: finding out from an error page or an invoice</p>
+        <p class="links"><a href="https://github.com/matpitts13/perchlight-guard">Source and setup</a></p>
+      </div>
+      <div class="soon">
+        <p class="tag">On the way</p>
+        <h3>More tools</h3>
+        <p>A booking page, a forms backend, a status page, crash reports, leaderboards and cloud saves for games, and more, built the same way: free, self-hosted, no subscriptions.</p>
+      </div>
+    </div>
+  </section>
+
+  <section>
+    <h2 class="section">The desktop app</h2>
+    <div class="grid">
+      <div><h3>One app, all your sites</h3><p>A project per site or app, each with its own Cloudflare account. Switch in one click.</p></div>
+      <div><h3>Screens without code</h3><p>Pick a table or a set of keys. Perchlight suggests the columns, and you choose what's shown, editable, and what each row's buttons do.</p></div>
+      <div><h3>Or write them yourself</h3><p>Screens are a <code>perchlight.json</code> file with a <a href="schema/v1.json">published schema</a>, so you or your AI agent can write it. Imports are checked and every problem is explained.</p></div>
+      <div><h3>Screens for every tool</h3><p>Each self-hosted tool ships a ready-made screen file: subscribers and announcements, releases and rollouts, usage and alerts.</p></div>
+    </div>
     <p class="cta">
       <a class="button" href="https://github.com/matpitts13/perchlight/releases/latest">Download for Windows, macOS or Linux</a>
-      <a class="button ghost" href="https://github.com/matpitts13/perchlight">View the source</a>
     </p>
     <p class="small">Free and open source (MIT). Installers aren't code-signed, so your system will ask you to confirm once. <a href="https://github.com/matpitts13/perchlight#install">How to open them</a>.</p>
   </section>
 
-  <section class="grid">
-    <div><h2>One app, all your sites</h2><p>A project per site or app, each with its own Cloudflare account. Switch in one click.</p></div>
-    <div><h2>Screens without code</h2><p>Pick a table or a set of keys. Perchlight suggests the columns, and you choose what's shown, editable, and what each row's buttons do.</p></div>
-    <div><h2>Or write them yourself</h2><p>Screens are a <code>perchlight.json</code> file with a <a href="schema/v1.json">published schema</a>, so you or your AI agent can write it. Imports are checked and every problem is explained.</p></div>
-    <div><h2>A mailing list included</h2><p>Pairs with <a href="https://github.com/matpitts13/perchlight-list">perchlight-list</a>, a free self-hosted mailing list on Cloudflare: double opt-in, spam protection, and announcements through Resend, Amazon SES, Mailgun, Postmark or Cloudflare Email.</p></div>
-    <div><h2>Updates for your app</h2><p><a href="https://github.com/matpitts13/perchlight-updates">perchlight-updates</a> is a free, self-hosted update server for Electron and Tauri apps: release channels, gradual rollouts, pulling a bad release in one command, and private links for beta testers.</p></div>
-  </section>
-
   <section class="signup" id="updates">
     <h2>Get updates</h2>
-    <p>On GitHub, choose <b>Watch → Custom → Releases</b> and GitHub will tell you when there's a new version.</p>
-    <p><a class="button ghost" href="https://github.com/matpitts13/perchlight">Watch on GitHub</a></p>
+    <p>On GitHub, open a tool and choose <b>Watch → Custom → Releases</b>, and GitHub will tell you when there's a new version.</p>
+    <p><a class="button ghost" href="https://github.com/matpitts13">All the tools on GitHub</a></p>
   </section>
 </main>
 
