@@ -1,0 +1,9 @@
+// The website in site/ (not the desktop app). Deploy with: npx wrangler deploy
+// Static files only, on Cloudflare Workers' free plan.
+{
+  "$schema": "https://unpkg.com/wrangler/config-schema.json",
+  "name": "perchlight",
+  "compatibility_date": "2026-11-09",
+  "assets": { "directory": "site" },
+  "routes": [{ "pattern": "perchlight.ravenburst.com", "custom_domain": true }]
+}

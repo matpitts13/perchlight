@@ -117,11 +117,9 @@ Or run from source (Node 22+): `npm install`, then `npm start`.
   - Put the client id in that same file.
   - Then test the flow and update this README.
 - **Icon:** edit `build/icon.svg`, then run `npm run icon`.
-- **Website** (`site/`, a static page with privacy and terms pages; free on Cloudflare Pages):
-  1. Set the "Get updates" form's `action` to your perchlight-list deployment.
-  2. Run `npx wrangler pages deploy site --project-name perchlight`.
-  3. Add the custom domain (e.g. `perchlight.ravenburst.com`) in the Pages project settings.
-  4. `site/schema/v1.json` must match `schema/perchlight.schema.json`; a test checks this.
+- **Website** (`site/`, a static page with privacy and terms pages; free on Cloudflare Workers):
+  1. Run `npx wrangler deploy`. [`wrangler.jsonc`](wrangler.jsonc) serves `site/` at `perchlight.ravenburst.com`; change the domain there for your own.
+  2. `site/schema/v1.json` must match `schema/perchlight.schema.json`; a test checks this.
 
 ## License
 
