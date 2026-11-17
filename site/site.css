@@ -70,7 +70,11 @@ code, pre { font-family: var(--mono); font-size: 14px; }
 .hero h1 { max-width: 24ch; margin: 0 auto; }
 .hero .lead { max-width: 60ch; margin: 24px auto 0; font-size: 20px; line-height: 1.55; color: var(--on-night-muted); }
 .hero .actions { justify-content: center; margin-top: 36px; }
-.hero .note { margin-top: 18px; font-size: 15px; color: var(--on-night-muted); }
+.cta-stack { display: flex; flex-direction: column; align-items: center; }
+.gps { display: inline-block; margin-top: 20px; border-radius: 8px; line-height: 0; transition: transform .1s var(--ease); }
+.gps:hover { transform: translateY(-1px); }
+.gps img { display: block; }
+.hero .note { margin-top: 14px; font-size: 15px; color: var(--on-night-muted); }
 
 /* app frame: illustrative HTML of the desktop app */
 .frame { margin: 64px auto 0; max-width: 980px; text-align: left; background: var(--paper); color: var(--ink); border-radius: 8px 8px 0 0; box-shadow: 0 -2px 0 var(--night-line), 0 24px 60px rgba(0, 0, 0, .45); overflow: hidden; font-size: 14px; }
@@ -111,7 +115,7 @@ code, pre { font-family: var(--mono); font-size: 14px; }
 .tool h4 a:hover { color: var(--link); text-decoration: underline; }
 .tool p { color: var(--text-2); max-width: 60ch; }
 .tool .instead { font-size: 15px; color: var(--text-2); }
-.tool .instead s { text-decoration-color: var(--branch); text-decoration-thickness: 2px; }
+.tool .instead b { color: var(--text); font-weight: 600; }
 .app-tool { margin-top: 56px; display: flex; flex-wrap: wrap; align-items: center; justify-content: space-between; gap: 16px 32px; padding: 24px 0; border-top: 2px solid var(--text); border-bottom: 1px solid var(--rule); }
 .app-tool p { max-width: 62ch; color: var(--text-2); }
 .app-tool b { color: var(--text); }
@@ -174,6 +178,8 @@ code, pre { font-family: var(--mono); font-size: 14px; }
 .doc h2 { font-size: 1.6rem; margin: 48px 0 12px; }
 .doc p, .doc ul { margin: 0 0 16px; }
 .doc li { margin-bottom: 8px; }
+.gps-row { margin: 16px 0 24px; }
+.gps-row .gps { margin: 0; }
 .small { font-size: 15px; color: var(--text-2); }
 header.top.wrap { background: none; }
 .top-band { background: var(--night); }
@@ -197,10 +203,19 @@ header.top.wrap { background: none; }
   .top nav a:not(.button):not(:first-child) { display: none; }
   .hero { padding-top: 40px; }
   .hero .lead { font-size: 18px; }
+  /* small phones: the Preferred Sources badge must stay on the first screen (house rule), so it leads the actions */
+  .cta-stack .gps { order: -1; margin: 24px 0 0; }
+  .cta-stack .actions { margin-top: 16px; }
   .actions .button { width: 100%; justify-content: center; }
   .frame { margin-top: 48px; }
   .frame td:nth-child(3), .frame td:nth-child(4) { display: none; }
   .band { padding: 64px 0; }
+}
+@media (max-width: 380px) {
+  .hero { padding-top: 28px; }
+  .top nav a:not(.button) { display: none; }
+  .hero h1 { font-size: 2rem; }
+  .hero .lead { font-size: 17px; margin-top: 16px; }
 }
 @media (prefers-reduced-motion: reduce) {
   *, *::before, *::after { transition-duration: .01ms !important; animation-duration: .01ms !important; transition-delay: 0s !important; }

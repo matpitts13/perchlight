@@ -3,13 +3,28 @@
 <head>
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
-<title>Perchlight: self-hosted tools for small software products, on your Cloudflare account</title>
-<meta name="description" content="Thirteen free, open-source tools you deploy to your own Cloudflare account: a mailing list, an update server, crash reports, license keys, a status page and more, plus a desktop app to run them. MIT licensed.">
+<title>Perchlight: free self-hosted tools for your Cloudflare account</title>
+<meta name="description" content="Thirteen free, open-source tools for your own Cloudflare account: a mailing list, update server, crash reports, license keys and more, plus a desktop app.">
 <meta name="theme-color" content="#15171c">
+<link rel="canonical" href="https://perchlight.ravenburst.com/">
+<meta property="og:type" content="website">
+<meta property="og:url" content="https://perchlight.ravenburst.com/">
+<meta property="og:site_name" content="Perchlight">
+<meta property="og:image" content="https://perchlight.ravenburst.com/social-card.png">
+<meta property="og:image:width" content="1200">
+<meta property="og:image:height" content="630">
+<meta property="og:image:alt" content="Perchlight logo: a bird on a branch cut out of an amber lamp, with the tagline">
+<meta name="twitter:card" content="summary_large_image">
+<script type="application/ld+json">
+{"@context":"https://schema.org","@graph":[
+ {"@type":"Organization","@id":"https://perchlight.ravenburst.com/#org","name":"Perchlight","url":"https://perchlight.ravenburst.com/","logo":"https://perchlight.ravenburst.com/icon.png","sameAs":["https://github.com/matpitts13"]},
+ {"@type":"WebSite","@id":"https://perchlight.ravenburst.com/#site","url":"https://perchlight.ravenburst.com/","name":"Perchlight","publisher":{"@id":"https://perchlight.ravenburst.com/#org"}},
+ {"@type":"SoftwareApplication","name":"Perchlight","applicationCategory":"DeveloperApplication","operatingSystem":"Windows, macOS, Linux","url":"https://perchlight.ravenburst.com/#desktop","downloadUrl":"https://github.com/matpitts13/perchlight/releases/latest","license":"https://opensource.org/license/mit","isAccessibleForFree":true,"offers":{"@type":"Offer","price":"0","priceCurrency":"USD"},"publisher":{"@id":"https://perchlight.ravenburst.com/#org"}}
+]}
+</script>
 <meta property="og:title" content="Perchlight">
 <meta property="og:description" content="Free, open-source tools for small software products, running on your own Cloudflare account.">
-<meta property="og:image" content="icon.png">
-<link rel="icon" href="icon.png">
+<link rel="icon" href="favicon.ico" sizes="48x48"><link rel="icon" href="favicon.svg" type="image/svg+xml"><link rel="apple-touch-icon" href="apple-touch-icon.png">
 <link rel="preload" href="fonts/source-serif-4-latin-wght-normal.woff2" as="font" type="font/woff2" crossorigin>
 <link rel="preload" href="fonts/ibm-plex-sans-latin-400-normal.woff2" as="font" type="font/woff2" crossorigin>
 <link rel="stylesheet" href="site.css">
@@ -19,7 +34,7 @@
 
 <div class="night">
   <header class="wrap top">
-    <a class="brand" href="/"><img src="icon.png" alt="" width="36" height="36"> Perchlight</a>
+    <a class="brand" href="/"><img src="favicon.svg" alt="" width="36" height="36"> Perchlight</a>
     <nav aria-label="Main">
       <a href="#tools">Tools</a>
       <a href="#runs-on">What they run on</a>
@@ -32,9 +47,13 @@
   <section class="hero wrap" aria-labelledby="hero-title">
     <h1 id="hero-title">Self-hosted tools for small software products, on your own Cloudflare account</h1>
     <p class="lead">Thirteen open-source services you deploy once and stop paying for: a mailing list, an update server, crash reports, license keys, a status page and eight more. One desktop app runs them all.</p>
+    <div class="cta-stack">
     <div class="actions">
       <a class="button primary" href="#tools">Browse the tools</a>
       <a class="button secondary" href="https://github.com/matpitts13/perchlight/releases/latest">Download the desktop app</a>
+    </div>
+    <!-- Google Preferred Sources: official badge, self-hosted; plain deeplink, no Google script. Rule: on the first screen of every site. -->
+    <a class="gps" href="https://www.google.com/preferences/source?q=perchlight.ravenburst.com"><img src="badges/google-preferred-source-dark.png" srcset="badges/google-preferred-source-dark@2x.png 2x" width="152" height="48" alt="Add as a preferred source on Google"></a>
     </div>
     <p class="note">MIT licensed. Most small products fit inside Cloudflare's free plan.</p>
 
@@ -80,25 +99,25 @@
       <div class="groups">
         <div class="group">
           <h3>Ship and sell your app</h3>
-          <div class="tool"><h4><a href="https://github.com/matpitts13/perchlight-updates">perchlight-updates</a></h4><p>An update server for Electron and Tauri apps: release channels, gradual rollouts, pulling a bad release in one command, and private links for testers.</p><p class="instead">Replaces <s>paid update and download hosting</s></p></div>
-          <div class="tool"><h4><a href="https://github.com/matpitts13/perchlight-crashes">perchlight-crashes</a></h4><p>Crash and error reports for desktop apps and games. Electron's crash reporter and Sentry's SDKs send to it unchanged, with one alert per new issue or regression.</p><p class="instead">Replaces <s>a crash-reporting subscription</s></p></div>
-          <div class="tool"><h4><a href="https://github.com/matpitts13/perchlight-keys">perchlight-keys</a></h4><p>License keys with signed passes your app checks offline, device limits, and keys issued from Stripe, Lemon Squeezy, Gumroad or itch.io.</p><p class="instead">Replaces <s>paid license key services</s></p></div>
-          <div class="tool"><h4><a href="https://github.com/matpitts13/perchlight-beta">perchlight-beta</a></h4><p>A private beta and advance-reader portal: applications, invites, NDA records, personal download links, feedback and bug reports.</p><p class="instead">Replaces <s>paid beta testing portals</s></p></div>
-          <div class="tool"><h4><a href="https://github.com/matpitts13/perchlight-play">perchlight-play</a></h4><p>Leaderboards, cloud saves and remote config for games, with stated anti-cheat limits and saves that are never silently overwritten.</p><p class="instead">Replaces <s>paid game backend services</s></p></div>
+          <div class="tool"><h4><a href="https://github.com/matpitts13/perchlight-updates">perchlight-updates</a></h4><p>An update server for Electron and Tauri apps: release channels, gradual rollouts, pulling a bad release in one command, and private links for testers.</p><p class="instead"><b>Replaces</b> paid update and download hosting</p></div>
+          <div class="tool"><h4><a href="https://github.com/matpitts13/perchlight-crashes">perchlight-crashes</a></h4><p>Crash and error reports for desktop apps and games. Electron's crash reporter and Sentry's SDKs send to it unchanged, with one alert per new issue or regression.</p><p class="instead"><b>Replaces</b> a crash-reporting subscription</p></div>
+          <div class="tool"><h4><a href="https://github.com/matpitts13/perchlight-keys">perchlight-keys</a></h4><p>License keys with signed passes your app checks offline, device limits, and keys issued from Stripe, Lemon Squeezy, Gumroad or itch.io.</p><p class="instead"><b>Replaces</b> paid license key services</p></div>
+          <div class="tool"><h4><a href="https://github.com/matpitts13/perchlight-beta">perchlight-beta</a></h4><p>A private beta and advance-reader portal: applications, invites, NDA records, personal download links, feedback and bug reports.</p><p class="instead"><b>Replaces</b> paid beta testing portals</p></div>
+          <div class="tool"><h4><a href="https://github.com/matpitts13/perchlight-play">perchlight-play</a></h4><p>Leaderboards, cloud saves and remote config for games, with stated anti-cheat limits and saves that are never silently overwritten.</p><p class="instead"><b>Replaces</b> paid game backend services</p></div>
         </div>
         <div class="group">
           <h3>Hear from people</h3>
-          <div class="tool"><h4><a href="https://github.com/matpitts13/perchlight-list">perchlight-list</a></h4><p>A mailing list: double opt-in signups, spam protection, and announcements through Resend, Amazon SES, Mailgun, Postmark or Cloudflare Email.</p><p class="instead">Replaces <s>a monthly newsletter-service bill</s></p></div>
-          <div class="tool"><h4><a href="https://github.com/matpitts13/perchlight-forms">perchlight-forms</a></h4><p>A backend for your website's forms, from plain HTML: contact, signups and file uploads, a spam folder, and an email or webhook for each submission.</p><p class="instead">Replaces <s>a paid form service</s></p></div>
-          <div class="tool"><h4><a href="https://github.com/matpitts13/perchlight-booking">perchlight-booking</a></h4><p>A "pick a time with me" page that reads your busy times from your calendar's private link, never double-books, and sends invites with cancel and reschedule links.</p><p class="instead">Replaces <s>a scheduling-page subscription</s></p></div>
-          <div class="tool"><h4><a href="https://github.com/matpitts13/perchlight-ask">perchlight-ask</a></h4><p>Answers questions from your own docs with links to the pages it used, and drafts support replies for you to approve. It never sends on its own.</p><p class="instead">Replaces <s>paid docs chatbots and AI help desks</s></p></div>
+          <div class="tool"><h4><a href="https://github.com/matpitts13/perchlight-list">perchlight-list</a></h4><p>A mailing list: double opt-in signups, spam protection, and announcements through Resend, Amazon SES, Mailgun, Postmark or Cloudflare Email.</p><p class="instead"><b>Replaces</b> a monthly newsletter-service bill</p></div>
+          <div class="tool"><h4><a href="https://github.com/matpitts13/perchlight-forms">perchlight-forms</a></h4><p>A backend for your website's forms, from plain HTML: contact, signups and file uploads, a spam folder, and an email or webhook for each submission.</p><p class="instead"><b>Replaces</b> a paid form service</p></div>
+          <div class="tool"><h4><a href="https://github.com/matpitts13/perchlight-booking">perchlight-booking</a></h4><p>A "pick a time with me" page that reads your busy times from your calendar's private link, never double-books, and sends invites with cancel and reschedule links.</p><p class="instead"><b>Replaces</b> a scheduling-page subscription</p></div>
+          <div class="tool"><h4><a href="https://github.com/matpitts13/perchlight-ask">perchlight-ask</a></h4><p>Answers questions from your own docs with links to the pages it used, and drafts support replies for you to approve. It never sends on its own.</p><p class="instead"><b>Replaces</b> paid docs chatbots and AI help desks</p></div>
         </div>
         <div class="group">
           <h3>Keep it running</h3>
-          <div class="tool"><h4><a href="https://github.com/matpitts13/perchlight-guard">perchlight-guard</a></h4><p>Warns you at 80% and 100% of every Cloudflare free-plan limit, and of GitHub Actions' free allowance, before you hit errors or a bill.</p><p class="instead">Replaces <s>finding out from an error page or an invoice</s></p></div>
-          <div class="tool"><h4><a href="https://github.com/matpitts13/perchlight-status">perchlight-status</a></h4><p>Uptime checks from two regions, a public status page with incidents and 90-day history, and warnings before domains and certificates expire.</p><p class="instead">Replaces <s>paid uptime monitors and status pages</s></p></div>
-          <div class="tool"><h4><a href="https://github.com/matpitts13/perchlight-hooks">perchlight-hooks</a></h4><p>A webhook inspector with signature checks, replay and forwarding, scheduled jobs that call your URLs, and heartbeat monitors for jobs that stop checking in.</p><p class="instead">Replaces <s>paid webhook, cron and heartbeat services</s></p></div>
-          <div class="tool"><h4><a href="https://github.com/matpitts13/perchlight-privacy">perchlight-privacy</a></h4><p>Checks the websites you own for trackers, cookies set before consent, missing privacy headers and insecure forms, and alerts you when something changes.</p><p class="instead">Replaces <s>paid website privacy scanners</s></p></div>
+          <div class="tool"><h4><a href="https://github.com/matpitts13/perchlight-guard">perchlight-guard</a></h4><p>Warns you at 80% and 100% of every Cloudflare free-plan limit, and of GitHub Actions' free allowance, before you hit errors or a bill.</p><p class="instead"><b>Replaces</b> surprise error pages and invoices</p></div>
+          <div class="tool"><h4><a href="https://github.com/matpitts13/perchlight-status">perchlight-status</a></h4><p>Uptime checks from two regions, a public status page with incidents and 90-day history, and warnings before domains and certificates expire.</p><p class="instead"><b>Replaces</b> paid uptime monitors and status pages</p></div>
+          <div class="tool"><h4><a href="https://github.com/matpitts13/perchlight-hooks">perchlight-hooks</a></h4><p>A webhook inspector with signature checks, replay and forwarding, scheduled jobs that call your URLs, and heartbeat monitors for jobs that stop checking in.</p><p class="instead"><b>Replaces</b> paid webhook, cron and heartbeat services</p></div>
+          <div class="tool"><h4><a href="https://github.com/matpitts13/perchlight-privacy">perchlight-privacy</a></h4><p>Checks the websites you own for trackers, cookies set before consent, missing privacy headers and insecure forms, and alerts you when something changes.</p><p class="instead"><b>Replaces</b> paid website privacy scanners</p></div>
         </div>
       </div>
       <div class="app-tool">
@@ -185,10 +204,12 @@
 
   <section class="band night close" id="updates" aria-labelledby="updates-title">
     <div class="wrap">
-      <h2 id="updates-title">Hear about new releases on GitHub</h2>
+      <h2 id="updates-title">Hear about new releases</h2>
       <p>This site has no mailing list. Open any tool on GitHub and choose <kbd>Watch</kbd> → <kbd>Custom</kbd> → <kbd>Releases</kbd> to get a notice for each new version.</p>
       <div class="actions">
         <a class="button primary" href="https://github.com/matpitts13">Open the tools on GitHub</a>
+        <!-- Google Preferred Sources deeplink (documented alternative to Google's script button; loads no third-party code). -->
+        <a class="button secondary" href="https://www.google.com/preferences/source?q=perchlight.ravenburst.com">Add as a preferred source on Google</a>
       </div>
     </div>
   </section>

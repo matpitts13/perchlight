@@ -11,3 +11,4 @@ graphify-out/
 
 # /design visual-qa screenshots (build output)
 .design/qa/
+.design/logo*/
