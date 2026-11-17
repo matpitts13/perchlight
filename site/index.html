@@ -3,150 +3,203 @@
 <head>
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
-<title>Perchlight: free tools for running your product on Cloudflare</title>
-<meta name="description" content="Free, open-source tools that run on your own Cloudflare account: a desktop app for your KV and D1 data, a mailing list, an update server for your app, usage alerts, crash reports and a forms backend. No subscriptions.">
+<title>Perchlight: self-hosted tools for small software products, on your Cloudflare account</title>
+<meta name="description" content="Thirteen free, open-source tools you deploy to your own Cloudflare account: a mailing list, an update server, crash reports, license keys, a status page and more, plus a desktop app to run them. MIT licensed.">
+<meta name="theme-color" content="#15171c">
+<meta property="og:title" content="Perchlight">
+<meta property="og:description" content="Free, open-source tools for small software products, running on your own Cloudflare account.">
+<meta property="og:image" content="icon.png">
 <link rel="icon" href="icon.png">
+<link rel="preload" href="fonts/source-serif-4-latin-wght-normal.woff2" as="font" type="font/woff2" crossorigin>
+<link rel="preload" href="fonts/ibm-plex-sans-latin-400-normal.woff2" as="font" type="font/woff2" crossorigin>
 <link rel="stylesheet" href="site.css">
 </head>
 <body>
-<header class="wrap top">
-  <a class="brand" href="/"><img src="icon.png" alt="" width="36" height="36"> Perchlight</a>
-  <nav><a href="#tools">Tools</a><a href="https://github.com/matpitts13">GitHub</a><a href="privacy.html">Privacy</a><a href="terms.html">Terms</a></nav>
-</header>
+<a class="skip" href="#main">Skip to content</a>
 
-<main class="wrap">
-  <section class="hero">
-    <h1>Free tools for running your product on Cloudflare</h1>
-    <p class="lead">A desktop app for your Cloudflare data, plus self-hosted tools that replace paid services: a mailing list, an update server for your app, usage alerts, crash reports, a forms backend, a booking page, a status page, and more on the way. All open source, all on your own Cloudflare account, no subscriptions.</p>
-    <p class="cta">
-      <a class="button" href="#tools">See the tools</a>
-      <a class="button ghost" href="https://github.com/matpitts13">Everything on GitHub</a>
-    </p>
-    <p class="small">Each tool is a separate project you can use on its own. The self-hosted ones deploy to your account with one click, and fit inside Cloudflare's free plan for most small products.</p>
+<div class="night">
+  <header class="wrap top">
+    <a class="brand" href="/"><img src="icon.png" alt="" width="36" height="36"> Perchlight</a>
+    <nav aria-label="Main">
+      <a href="#tools">Tools</a>
+      <a href="#runs-on">What they run on</a>
+      <a href="#desktop">Desktop app</a>
+      <a href="https://github.com/matpitts13">GitHub</a>
+      <a class="button primary" href="https://github.com/matpitts13/perchlight/releases/latest">Download</a>
+    </nav>
+  </header>
+
+  <section class="hero wrap" aria-labelledby="hero-title">
+    <h1 id="hero-title">Self-hosted tools for small software products, on your own Cloudflare account</h1>
+    <p class="lead">Thirteen open-source services you deploy once and stop paying for: a mailing list, an update server, crash reports, license keys, a status page and eight more. One desktop app runs them all.</p>
+    <div class="actions">
+      <a class="button primary" href="#tools">Browse the tools</a>
+      <a class="button secondary" href="https://github.com/matpitts13/perchlight/releases/latest">Download the desktop app</a>
+    </div>
+    <p class="note">MIT licensed. Most small products fit inside Cloudflare's free plan.</p>
+
+    <div class="frame" role="img" aria-label="The Perchlight desktop app showing a mailing list's subscribers, with screens for announcements, releases and usage alerts in the sidebar.">
+      <div class="frame-bar" aria-hidden="true"><i></i><i></i><i></i><span>Perchlight</span></div>
+      <div class="frame-body" aria-hidden="true">
+        <div class="frame-side">
+          <div class="proj"><span>Main site</span><span>▾</span></div>
+          <ul>
+            <li class="group">Tools</li>
+            <li class="on">Subscribers</li>
+            <li>Announcements</li>
+            <li>Releases</li>
+            <li>Usage alerts</li>
+            <li class="group">Your data</li>
+            <li>KV · settings</li>
+            <li>D1 · orders</li>
+          </ul>
+        </div>
+        <div class="frame-main">
+          <header><b>Subscribers</b><span class="fake-btn">New announcement</span></header>
+          <div class="tabs"><span class="on">All 6</span><span>Confirmed 4</span><span>Waiting 1</span><span>Blocked 1</span></div>
+          <table>
+            <tr><td>rowan@example.com</td><td><span class="state ok">Confirmed</span></td><td>Nov 14</td><td>Website form</td></tr>
+            <tr><td>j.alvarez@example.org</td><td><span class="state ok">Confirmed</span></td><td>Nov 12</td><td>Desktop app</td></tr>
+            <tr><td>kit.b@example.net</td><td><span class="state">Waiting</span></td><td>Nov 12</td><td>Website form</td></tr>
+            <tr><td>hello@example.com</td><td><span class="state ok">Confirmed</span></td><td>Nov 9</td><td>Import</td></tr>
+            <tr><td>sam.ortiz@example.org</td><td><span class="state ok">Confirmed</span></td><td>Nov 3</td><td>Website form</td></tr>
+          </table>
+        </div>
+      </div>
+    </div>
   </section>
+</div>
 
-  <section id="tools">
-    <h2 class="section">The tools</h2>
-    <div class="grid tools">
-      <div>
-        <p class="tag">Desktop app · Windows, macOS, Linux</p>
-        <h3>Perchlight</h3>
-        <p>Browse and edit Workers KV and D1, build your own screens over your data without code, and run every tool below from one place.</p>
-        <p class="replaces">Replaces: digging through the dashboard</p>
-        <p class="links"><a href="https://github.com/matpitts13/perchlight/releases/latest">Download</a><a href="https://github.com/matpitts13/perchlight">Source</a></p>
+<main id="main">
+  <section class="band" id="tools" aria-labelledby="tools-title">
+    <div class="wrap">
+      <div class="head">
+        <h2 id="tools-title">Thirteen tools, grouped by the job they do</h2>
+        <p>Each one is its own repository with a setup guide. Use one, or all of them on the same account.</p>
       </div>
-      <div>
-        <p class="tag">Self-hosted · Workers + D1</p>
-        <h3>perchlight-list</h3>
-        <p>A mailing list: double opt-in signups, spam protection, and announcements through Resend, Amazon SES, Mailgun, Postmark or Cloudflare Email.</p>
-        <p class="replaces">Replaces: a monthly newsletter-service bill</p>
-        <p class="links"><a href="https://github.com/matpitts13/perchlight-list">Source and setup</a></p>
+      <div class="groups">
+        <div class="group">
+          <h3>Ship and sell your app</h3>
+          <div class="tool"><h4><a href="https://github.com/matpitts13/perchlight-updates">perchlight-updates</a></h4><p>An update server for Electron and Tauri apps: release channels, gradual rollouts, pulling a bad release in one command, and private links for testers.</p><p class="instead">Replaces <s>paid update and download hosting</s></p></div>
+          <div class="tool"><h4><a href="https://github.com/matpitts13/perchlight-crashes">perchlight-crashes</a></h4><p>Crash and error reports for desktop apps and games. Electron's crash reporter and Sentry's SDKs send to it unchanged, with one alert per new issue or regression.</p><p class="instead">Replaces <s>a crash-reporting subscription</s></p></div>
+          <div class="tool"><h4><a href="https://github.com/matpitts13/perchlight-keys">perchlight-keys</a></h4><p>License keys with signed passes your app checks offline, device limits, and keys issued from Stripe, Lemon Squeezy, Gumroad or itch.io.</p><p class="instead">Replaces <s>paid license key services</s></p></div>
+          <div class="tool"><h4><a href="https://github.com/matpitts13/perchlight-beta">perchlight-beta</a></h4><p>A private beta and advance-reader portal: applications, invites, NDA records, personal download links, feedback and bug reports.</p><p class="instead">Replaces <s>paid beta testing portals</s></p></div>
+          <div class="tool"><h4><a href="https://github.com/matpitts13/perchlight-play">perchlight-play</a></h4><p>Leaderboards, cloud saves and remote config for games, with stated anti-cheat limits and saves that are never silently overwritten.</p><p class="instead">Replaces <s>paid game backend services</s></p></div>
+        </div>
+        <div class="group">
+          <h3>Hear from people</h3>
+          <div class="tool"><h4><a href="https://github.com/matpitts13/perchlight-list">perchlight-list</a></h4><p>A mailing list: double opt-in signups, spam protection, and announcements through Resend, Amazon SES, Mailgun, Postmark or Cloudflare Email.</p><p class="instead">Replaces <s>a monthly newsletter-service bill</s></p></div>
+          <div class="tool"><h4><a href="https://github.com/matpitts13/perchlight-forms">perchlight-forms</a></h4><p>A backend for your website's forms, from plain HTML: contact, signups and file uploads, a spam folder, and an email or webhook for each submission.</p><p class="instead">Replaces <s>a paid form service</s></p></div>
+          <div class="tool"><h4><a href="https://github.com/matpitts13/perchlight-booking">perchlight-booking</a></h4><p>A "pick a time with me" page that reads your busy times from your calendar's private link, never double-books, and sends invites with cancel and reschedule links.</p><p class="instead">Replaces <s>a scheduling-page subscription</s></p></div>
+          <div class="tool"><h4><a href="https://github.com/matpitts13/perchlight-ask">perchlight-ask</a></h4><p>Answers questions from your own docs with links to the pages it used, and drafts support replies for you to approve. It never sends on its own.</p><p class="instead">Replaces <s>paid docs chatbots and AI help desks</s></p></div>
+        </div>
+        <div class="group">
+          <h3>Keep it running</h3>
+          <div class="tool"><h4><a href="https://github.com/matpitts13/perchlight-guard">perchlight-guard</a></h4><p>Warns you at 80% and 100% of every Cloudflare free-plan limit, and of GitHub Actions' free allowance, before you hit errors or a bill.</p><p class="instead">Replaces <s>finding out from an error page or an invoice</s></p></div>
+          <div class="tool"><h4><a href="https://github.com/matpitts13/perchlight-status">perchlight-status</a></h4><p>Uptime checks from two regions, a public status page with incidents and 90-day history, and warnings before domains and certificates expire.</p><p class="instead">Replaces <s>paid uptime monitors and status pages</s></p></div>
+          <div class="tool"><h4><a href="https://github.com/matpitts13/perchlight-hooks">perchlight-hooks</a></h4><p>A webhook inspector with signature checks, replay and forwarding, scheduled jobs that call your URLs, and heartbeat monitors for jobs that stop checking in.</p><p class="instead">Replaces <s>paid webhook, cron and heartbeat services</s></p></div>
+          <div class="tool"><h4><a href="https://github.com/matpitts13/perchlight-privacy">perchlight-privacy</a></h4><p>Checks the websites you own for trackers, cookies set before consent, missing privacy headers and insecure forms, and alerts you when something changes.</p><p class="instead">Replaces <s>paid website privacy scanners</s></p></div>
+        </div>
       </div>
-      <div>
-        <p class="tag">Self-hosted · Workers + R2 + D1</p>
-        <h3>perchlight-updates</h3>
-        <p>An update server for Electron and Tauri apps: release channels, gradual rollouts, pulling a bad release in one command, and private links for testers.</p>
-        <p class="replaces">Replaces: paid update and download hosting</p>
-        <p class="links"><a href="https://github.com/matpitts13/perchlight-updates">Source and setup</a></p>
-      </div>
-      <div>
-        <p class="tag">Self-hosted · Workers + D1</p>
-        <h3>perchlight-guard</h3>
-        <p>Warns you at 80% and 100% of every Cloudflare free-plan limit, and of GitHub Actions' free allowance, before you hit errors or a bill.</p>
-        <p class="replaces">Replaces: finding out from an error page or an invoice</p>
-        <p class="links"><a href="https://github.com/matpitts13/perchlight-guard">Source and setup</a></p>
-      </div>
-      <div>
-        <p class="tag">Self-hosted · Workers + D1 + R2</p>
-        <h3>perchlight-crashes</h3>
-        <p>Crash and error reports for desktop apps and games. Electron's crash reporter and Sentry's SDKs send to it unchanged; crashes are grouped, with one alert per new issue or regression.</p>
-        <p class="replaces">Replaces: a crash-reporting subscription</p>
-        <p class="links"><a href="https://github.com/matpitts13/perchlight-crashes">Source and setup</a></p>
-      </div>
-      <div>
-        <p class="tag">Self-hosted · Workers + D1</p>
-        <h3>perchlight-forms</h3>
-        <p>A backend for your website's forms: contact, signups and file uploads, from plain HTML. Spam filtering, a spam folder, and an email or webhook for each submission.</p>
-        <p class="replaces">Replaces: a paid form service</p>
-        <p class="links"><a href="https://github.com/matpitts13/perchlight-forms">Source and setup</a></p>
-      </div>
-      <div>
-        <p class="tag">Self-hosted · Workers + D1 + Durable Objects</p>
-        <h3>perchlight-booking</h3>
-        <p>A "pick a time with me" page that reads your busy times from your own calendar's private link, never double-books, and sends calendar invites with cancel and reschedule links.</p>
-        <p class="replaces">Replaces: a scheduling-page subscription</p>
-        <p class="links"><a href="https://github.com/matpitts13/perchlight-booking">Source and setup</a></p>
-      </div>
-      <div>
-        <p class="tag">Self-hosted · Workers + D1 + Durable Objects</p>
-        <h3>perchlight-status</h3>
-        <p>Uptime checks from two regions, a public status page with incidents and 90-day history, and warnings before your domains and certificates expire.</p>
-        <p class="replaces">Replaces: paid uptime monitors and status pages</p>
-        <p class="links"><a href="https://github.com/matpitts13/perchlight-status">Source and setup</a></p>
-      </div>
-      <div>
-        <p class="tag">Self-hosted · Workers + D1 + Durable Objects</p>
-        <h3>perchlight-hooks</h3>
-        <p>A webhook inspector with signature checks, replay and forwarding; scheduled jobs that call your URLs on a schedule; and heartbeat monitors that tell you when a job stops checking in.</p>
-        <p class="replaces">Replaces: paid webhook, cron and heartbeat services</p>
-        <p class="links"><a href="https://github.com/matpitts13/perchlight-hooks">Source and setup</a></p>
-      </div>
-      <div>
-        <h3>perchlight-play</h3>
-        <p>Leaderboards, cloud saves and remote config for games, with honest anti-cheat limits and saves that are never silently overwritten.</p>
-        <p class="replaces">Replaces: paid game backend services</p>
-        <p class="links"><a href="https://github.com/matpitts13/perchlight-play">Source and setup</a></p>
-      </div>
-      <div>
-        <h3>perchlight-privacy</h3>
-        <p>Checks the websites you own for trackers, cookies set before consent, missing privacy headers and insecure forms, and alerts you when something changes.</p>
-        <p class="replaces">Replaces: paid website privacy scanners</p>
-        <p class="links"><a href="https://github.com/matpitts13/perchlight-privacy">Source and setup</a></p>
-      </div>
-      <div>
-        <h3>perchlight-keys</h3>
-        <p>Software license keys with signed passes your app checks offline, device limits, and keys issued automatically from Stripe, Lemon Squeezy, Gumroad or itch.io.</p>
-        <p class="replaces">Replaces: paid license key services</p>
-        <p class="links"><a href="https://github.com/matpitts13/perchlight-keys">Source and setup</a></p>
-      </div>
-      <div>
-        <h3>perchlight-ask</h3>
-        <p>Answers questions from your own docs with links to the pages it used, and drafts support email replies for you to approve. Never sends on its own.</p>
-        <p class="replaces">Replaces: paid docs chatbots and AI help desks</p>
-        <p class="links"><a href="https://github.com/matpitts13/perchlight-ask">Source and setup</a></p>
-      </div>
-      <div>
-        <h3>perchlight-beta</h3>
-        <p>A private beta and advance-reader portal: applications, invites, NDA records, personal download links, feedback and bug reports.</p>
-        <p class="replaces">Replaces: paid beta testing portals</p>
-        <p class="links"><a href="https://github.com/matpitts13/perchlight-beta">Source and setup</a></p>
+      <div class="app-tool">
+        <p><b>Perchlight, the desktop app</b> for Windows, macOS and Linux, browses and edits your Workers KV and D1 data and has a ready-made screen for every tool above.</p>
+        <a class="button primary" href="#desktop">See the desktop app</a>
       </div>
     </div>
   </section>
 
-  <section>
-    <h2 class="section">The desktop app</h2>
-    <div class="grid">
-      <div><h3>One app, all your sites</h3><p>A project per site or app, each with its own Cloudflare account. Switch in one click.</p></div>
-      <div><h3>Screens without code</h3><p>Pick a table or a set of keys. Perchlight suggests the columns, and you choose what's shown, editable, and what each row's buttons do.</p></div>
-      <div><h3>Or write them yourself</h3><p>Screens are a <code>perchlight.json</code> file with a <a href="schema/v1.json">published schema</a>, so you or your AI agent can write it. Imports are checked and every problem is explained.</p></div>
-      <div><h3>Screens for every tool</h3><p>Each self-hosted tool ships a ready-made screen file: subscribers and announcements, releases and rollouts, usage and alerts.</p></div>
+  <section class="band night" id="runs-on" aria-labelledby="runs-title">
+    <div class="wrap">
+      <div class="head">
+        <h2 id="runs-title">What each tool runs on</h2>
+        <p>Read straight from each repository's Wrangler config. Every tool starts with a Worker and a D1 database; the rest are only the parts it needs.</p>
+      </div>
+      <div class="rails-wrap">
+        <table class="rails" id="rails">
+          <thead><tr><th scope="col">Tool</th><th scope="col">Workers</th><th scope="col">D1</th><th scope="col">R2</th><th scope="col">Durable Objects</th><th scope="col">Workers AI</th><th scope="col">Cron trigger</th></tr></thead>
+          <tbody>
+            <tr><th scope="row"><a href="https://github.com/matpitts13/perchlight-updates"><span class="pre">perchlight-</span>updates</a></th><td class="path first"><span class="stop"></span><span class="vh">uses</span></td><td class="path"><span class="stop"></span><span class="vh">uses</span></td><td class="path"><span class="stop"></span><span class="vh">uses</span></td><td class="path"><span class="vh">not used</span></td><td class="path"><span class="vh">not used</span></td><td class="path last"><span class="stop"></span><span class="vh">uses</span></td></tr>
+            <tr><th scope="row"><a href="https://github.com/matpitts13/perchlight-crashes"><span class="pre">perchlight-</span>crashes</a></th><td class="path first"><span class="stop"></span><span class="vh">uses</span></td><td class="path"><span class="stop"></span><span class="vh">uses</span></td><td class="path"><span class="stop"></span><span class="vh">uses</span></td><td class="path"><span class="vh">not used</span></td><td class="path"><span class="vh">not used</span></td><td class="path last"><span class="stop"></span><span class="vh">uses</span></td></tr>
+            <tr><th scope="row"><a href="https://github.com/matpitts13/perchlight-keys"><span class="pre">perchlight-</span>keys</a></th><td class="path first"><span class="stop"></span><span class="vh">uses</span></td><td class="path last"><span class="stop"></span><span class="vh">uses</span></td><td><span class="vh">not used</span></td><td><span class="vh">not used</span></td><td><span class="vh">not used</span></td><td><span class="vh">not used</span></td></tr>
+            <tr><th scope="row"><a href="https://github.com/matpitts13/perchlight-beta"><span class="pre">perchlight-</span>beta</a></th><td class="path first"><span class="stop"></span><span class="vh">uses</span></td><td class="path"><span class="stop"></span><span class="vh">uses</span></td><td class="path"><span class="stop"></span><span class="vh">uses</span></td><td class="path last"><span class="stop"></span><span class="vh">uses</span></td><td><span class="vh">not used</span></td><td><span class="vh">not used</span></td></tr>
+            <tr><th scope="row"><a href="https://github.com/matpitts13/perchlight-play"><span class="pre">perchlight-</span>play</a></th><td class="path first"><span class="stop"></span><span class="vh">uses</span></td><td class="path"><span class="stop"></span><span class="vh">uses</span></td><td class="path"><span class="vh">not used</span></td><td class="path last"><span class="stop"></span><span class="vh">uses</span></td><td><span class="vh">not used</span></td><td><span class="vh">not used</span></td></tr>
+            <tr><th scope="row"><a href="https://github.com/matpitts13/perchlight-list"><span class="pre">perchlight-</span>list</a></th><td class="path first"><span class="stop"></span><span class="vh">uses</span></td><td class="path"><span class="stop"></span><span class="vh">uses</span></td><td class="path"><span class="vh">not used</span></td><td class="path"><span class="vh">not used</span></td><td class="path"><span class="vh">not used</span></td><td class="path last"><span class="stop"></span><span class="vh">uses</span></td></tr>
+            <tr><th scope="row"><a href="https://github.com/matpitts13/perchlight-forms"><span class="pre">perchlight-</span>forms</a></th><td class="path first"><span class="stop"></span><span class="vh">uses</span></td><td class="path"><span class="stop"></span><span class="vh">uses</span></td><td class="path last"><span class="stop"></span><span class="vh">uses</span></td><td><span class="vh">not used</span></td><td><span class="vh">not used</span></td><td><span class="vh">not used</span></td></tr>
+            <tr><th scope="row"><a href="https://github.com/matpitts13/perchlight-booking"><span class="pre">perchlight-</span>booking</a></th><td class="path first"><span class="stop"></span><span class="vh">uses</span></td><td class="path"><span class="stop"></span><span class="vh">uses</span></td><td class="path"><span class="vh">not used</span></td><td class="path last"><span class="stop"></span><span class="vh">uses</span></td><td><span class="vh">not used</span></td><td><span class="vh">not used</span></td></tr>
+            <tr><th scope="row"><a href="https://github.com/matpitts13/perchlight-ask"><span class="pre">perchlight-</span>ask</a></th><td class="path first"><span class="stop"></span><span class="vh">uses</span></td><td class="path"><span class="stop"></span><span class="vh">uses</span></td><td class="path"><span class="vh">not used</span></td><td class="path"><span class="stop"></span><span class="vh">uses</span></td><td class="path last"><span class="stop"></span><span class="vh">uses</span></td><td><span class="vh">not used</span></td></tr>
+            <tr><th scope="row"><a href="https://github.com/matpitts13/perchlight-guard"><span class="pre">perchlight-</span>guard</a></th><td class="path first"><span class="stop"></span><span class="vh">uses</span></td><td class="path"><span class="stop"></span><span class="vh">uses</span></td><td class="path"><span class="vh">not used</span></td><td class="path"><span class="vh">not used</span></td><td class="path"><span class="vh">not used</span></td><td class="path last"><span class="stop"></span><span class="vh">uses</span></td></tr>
+            <tr><th scope="row"><a href="https://github.com/matpitts13/perchlight-status"><span class="pre">perchlight-</span>status</a></th><td class="path first"><span class="stop"></span><span class="vh">uses</span></td><td class="path"><span class="stop"></span><span class="vh">uses</span></td><td class="path"><span class="vh">not used</span></td><td class="path last"><span class="stop"></span><span class="vh">uses</span></td><td><span class="vh">not used</span></td><td><span class="vh">not used</span></td></tr>
+            <tr><th scope="row"><a href="https://github.com/matpitts13/perchlight-hooks"><span class="pre">perchlight-</span>hooks</a></th><td class="path first"><span class="stop"></span><span class="vh">uses</span></td><td class="path"><span class="stop"></span><span class="vh">uses</span></td><td class="path"><span class="vh">not used</span></td><td class="path last"><span class="stop"></span><span class="vh">uses</span></td><td><span class="vh">not used</span></td><td><span class="vh">not used</span></td></tr>
+            <tr><th scope="row"><a href="https://github.com/matpitts13/perchlight-privacy"><span class="pre">perchlight-</span>privacy</a></th><td class="path first"><span class="stop"></span><span class="vh">uses</span></td><td class="path"><span class="stop"></span><span class="vh">uses</span></td><td class="path"><span class="vh">not used</span></td><td class="path last"><span class="stop"></span><span class="vh">uses</span></td><td><span class="vh">not used</span></td><td><span class="vh">not used</span></td></tr>
+          </tbody>
+        </table>
+      </div>
+      <div class="rail-notes">
+        <p><b>Cron triggers are the scarce part.</b> Workers Free allows five per account and four tools use one each, so the newer tools do their housekeeping on requests instead.</p>
+        <p><b>Workers AI and Vectorize</b> are used by one tool, perchlight-ask, to search your docs.</p>
+      </div>
     </div>
-    <p class="cta">
-      <a class="button" href="https://github.com/matpitts13/perchlight/releases/latest">Download for Windows, macOS or Linux</a>
-    </p>
-    <p class="small">Free and open source (MIT). Installers aren't code-signed, so your system will ask you to confirm once. <a href="https://github.com/matpitts13/perchlight#install">How to open them</a>.</p>
   </section>
 
-  <section class="signup" id="updates">
-    <h2>Get updates</h2>
-    <p>On GitHub, open a tool and choose <b>Watch → Custom → Releases</b>, and GitHub will tell you when there's a new version.</p>
-    <p><a class="button ghost" href="https://github.com/matpitts13">All the tools on GitHub</a></p>
+  <section class="band" id="desktop" aria-labelledby="desktop-title">
+    <div class="wrap">
+      <div class="head">
+        <h2 id="desktop-title">One window for every site you run</h2>
+        <p>The desktop app keeps a project per site or app, each with its own Cloudflare account, and shows your data as screens you design.</p>
+      </div>
+      <div class="split">
+        <dl class="features">
+          <div><dt>Screens without code</dt><dd>Pick a D1 table or a set of KV keys. Perchlight samples the records and suggests columns; you choose what's shown, what's editable, and what each row's buttons do.</dd></div>
+          <div><dt>Or write them yourself</dt><dd>Screens are a <code>perchlight.json</code> file with a <a href="schema/v1.json">published schema</a>, so you or your AI agent can write one. Imports are checked and every problem is explained.</dd></div>
+          <div><dt>A screen for every tool</dt><dd>Each self-hosted tool ships a screen file: subscribers and announcements, releases and rollouts, usage and alerts.</dd></div>
+          <div><dt>Your data stays between you and Cloudflare</dt><dd>Your sign-in is stored with your operating system's key store and sent only to Cloudflare. The app has no analytics.</dd></div>
+        </dl>
+        <div class="code">
+          <div class="file">perchlight.json</div>
+<pre tabindex="0" aria-label="Example perchlight.json"><code>{
+  <span class="k">"version"</span>: 1,
+  <span class="k">"views"</span>: [{
+    <span class="k">"id"</span>: "orders",
+    <span class="k">"title"</span>: "Orders",
+    <span class="k">"source"</span>: {
+      <span class="k">"type"</span>: "d1", <span class="k">"database"</span>: "your-d1-id", <span class="k">"table"</span>: "orders"
+    },
+    <span class="k">"columns"</span>: [
+      { <span class="k">"label"</span>: "Customer", <span class="k">"from"</span>: "email" },
+      { <span class="k">"label"</span>: "Placed", <span class="k">"from"</span>: "created_at",
+        <span class="k">"type"</span>: "date" },
+      { <span class="k">"label"</span>: "Status", <span class="k">"from"</span>: "status",
+        <span class="k">"type"</span>: "enum",
+        <span class="k">"options"</span>: ["paid", "refunded"], <span class="k">"editable"</span>: true }
+    ]
+  }]
+}</code></pre>
+        </div>
+      </div>
+      <div class="desk-actions">
+        <a class="button primary" href="https://github.com/matpitts13/perchlight/releases/latest">Download for Windows, macOS or Linux</a>
+        <p>Free and open source (MIT). The installers aren't code-signed yet, so your system asks you to confirm once: <a href="https://github.com/matpitts13/perchlight#install">how to open them</a>.</p>
+      </div>
+    </div>
+  </section>
+
+  <section class="band night close" id="updates" aria-labelledby="updates-title">
+    <div class="wrap">
+      <h2 id="updates-title">Hear about new releases on GitHub</h2>
+      <p>This site has no mailing list. Open any tool on GitHub and choose <kbd>Watch</kbd> → <kbd>Custom</kbd> → <kbd>Releases</kbd> to get a notice for each new version.</p>
+      <div class="actions">
+        <a class="button primary" href="https://github.com/matpitts13">Open the tools on GitHub</a>
+      </div>
+    </div>
   </section>
 </main>
 
-<footer class="wrap small">
-  <p>Perchlight is an independent open-source project. It is not affiliated with, endorsed by, or sponsored by Cloudflare, Inc. "Cloudflare" is a trademark of Cloudflare, Inc.</p>
+<footer class="night foot">
+  <div class="wrap">
+    <p>Perchlight is an independent open-source project. It is not affiliated with, endorsed by, or sponsored by Cloudflare, Inc. "Cloudflare" is a trademark of Cloudflare, Inc.</p>
+    <nav aria-label="Footer"><a href="privacy.html">Privacy</a><a href="terms.html">Terms</a><a href="https://github.com/matpitts13/perchlight/blob/main/LICENSE">MIT License</a></nav>
+  </div>
 </footer>
+<script src="site.js" defer></script>
 </body>
 </html>

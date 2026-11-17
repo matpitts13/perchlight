@@ -1,0 +1,17 @@
+[
+  {
+    "date": "2026-11-16",
+    "mode": "persuade",
+    "kind": "software",
+    "seed": 1697963508,
+    "layout": "centred statement + product below",
+    "nav": "nav-split",
+    "density": "dark band rhythm",
+    "palette": "high-contrast black/white + one signal colour",
+    "type": "serif display + sans text",
+    "radius": "sharp (2-4px)",
+    "buttons": "pill",
+    "signature": "a data shape drawn as a real-world diagram (map, timetable, circuit)",
+    "effects": "one effect allowed (shader ground or WebGL part), static fallback"
+  }
+]

@@ -8,3 +8,6 @@ smoke*.png
 Thumbs.db
 .wrangler/
 graphify-out/
+
+# /design visual-qa screenshots (build output)
+.design/qa/
